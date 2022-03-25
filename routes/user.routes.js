@@ -1,5 +1,5 @@
 const userController = require("../controller/user.controller")
-const { modelName } = require("../db/models/user.model")
+// const { modelName } = require("../db/models/user.model")
 
 const router = require("express").Router()
 const auth = require("../middleware/auth")
