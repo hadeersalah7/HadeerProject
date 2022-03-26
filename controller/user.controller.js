@@ -1,5 +1,5 @@
 const bcrypt = require("bcryptjs/dist/bcrypt")
-const userModel = require("../db/models/user.model")
+// const userModel = require("../db/models/user.model")
 
 class User {
     //Add New Users Function:

@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         trim: true,
         required: true,
-        unique:true,
+        // unique:true,
         validate(value){
             if(!validator.isEmail(value)) throw new Error ("Invalid Email")
         }
@@ -95,7 +95,11 @@ userSchema.methods.generateToken = async function(){
     await user.save()
     return token
 }
-
+userSchema.virtual("userPosts", {
+    ref:"Post",
+    localField:"_id",
+    foreignField:"userId"
+})
 const User = mongoose.model("User", userSchema)
 
 module.exports = User

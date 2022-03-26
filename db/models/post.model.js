@@ -7,11 +7,13 @@ const mongoose = require("mongoose")
     ref: "User",
     required: true
     },
+
+    
     postType:{
         type:String,
         trim:true,
         required:true,
-        enum: ['txt', 'img', 'exe', 'pdf', 'video']
+        enum: ['txt', 'img', 'exe' , 'pdf']
       },
       
       content:{
@@ -31,11 +33,8 @@ const mongoose = require("mongoose")
         required: () => this.postType == "exe" || "pdf"
       }, 
 
-      vedios: {
-        type: String,
-        trim: true,
-        required: () => this.postType == "vedio"
-      }
+  
+
 },
 {timestamps:true})
 
