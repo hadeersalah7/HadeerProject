@@ -3,10 +3,11 @@ const jwt = require("jsonwebtoken")
 // const { findOne } = require("../db/models/user.model")
 
 const auth = async(req,res,next)=>{
-    
     try{
        const token = req.header("Authorization")
        const decoded = jwt.verify(token,"project")
+      // res.send(token)
+    
        const user = await User.findOne({
         "_id":decoded._id,
         "tokens.token":token,
@@ -15,7 +16,8 @@ const auth = async(req,res,next)=>{
     if(!user) throw new Error("invalid credintials")
     req.user= user,
     req.token = token
-    next()
+
+next()
     }
     
     catch(e) {

@@ -9,8 +9,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         trim: true,
         required: true,
-        minlength: 3,
-        maxlength: 15
+        minlength: 2,
+        maxlength: 20
     },
     age:{
         type: Number,
@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         trim: true,
         required: true,
-        // unique:true,
+        unique:true,
         validate(value){
             if(!validator.isEmail(value)) throw new Error ("Invalid Email")
         }
@@ -32,6 +32,7 @@ const userSchema = new mongoose.Schema({
         trime: true,
         required: true,
         minlength: 5,
+        maxlength: 15,
         validate(value) {
             if(value.includes(this.name)) throw  new Error ("Password Can't Contain Your Name")
         }

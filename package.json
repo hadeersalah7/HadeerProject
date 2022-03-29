@@ -1,15 +1,24 @@
 {
-  "name": "project",
+  "name": "hadeer-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hadeersalah7/HadeerProject.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hadeersalah7/HadeerProject/issues"
+  },
+  "homepage": "https://github.com/hadeersalah7/HadeerProject#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",

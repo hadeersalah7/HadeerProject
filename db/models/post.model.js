@@ -19,18 +19,18 @@ const mongoose = require("mongoose")
       content:{
         type: String,
         trim: true,
-        required: () => this.postType == "txt"
+        required: function () { return this.postType == 'txt'}
       },
 
       image: {
         type: String,
         trim: true,
-        required: () => this.postType = "img"
-      },
+        required: function () { return this.postType == 'img'}
+      },           
 
       file: {
         type: String,
-        required: () => this.postType == "exe" || "pdf"
+        required: function () { return this.postType == 'pdf'||this.postType == 'exe'}
       }, 
 
   

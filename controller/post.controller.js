@@ -1,9 +1,8 @@
 const postModel = require("../db/models/post.model")
-
 class Post {
-
 static addPost = async(req, res) =>{
     try{
+        //res.send(req.body)
         const postData = new postModel({userId: req.user._id, ...req.body})
         await postData.save()
 
