@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
         trime: true,
         required: true,
         minlength: 5,
-        maxlength: 15,
+        // maxlength: 15,
         validate(value) {
             if(value.includes(this.name)) throw  new Error ("Password Can't Contain Your Name")
         }

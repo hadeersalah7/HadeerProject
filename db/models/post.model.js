@@ -34,7 +34,18 @@ const mongoose = require("mongoose")
       }, 
 
   
+      likes: [
+        {
+          userId: {},
+        }
+      ],
 
+      comments: [
+        {
+          comment: {},
+          userId: {}
+        }
+      ]
 },
 {timestamps:true})
 
